@@ -11,7 +11,7 @@ server.get('/', (req, res) => {
 });
 
 // make the port dynamic
-const port = process.env.PORT || 5005;
+const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`\n** Running on port${port} **\n`))
 
 
