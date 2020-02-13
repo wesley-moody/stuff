@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require("express");
 
 const server = express();
@@ -5,7 +7,7 @@ const server = express();
 server.use(express.json());
 
 server.get("/", (req, res) => {
-  const songs = [{ id: 1, name: "Final Countdown" }];
+  const songs = [{ id: 1, name: "Final Countdown", secret: process.env.SECRET }];
 
   res.status(200).json(songs);
 });
@@ -13,3 +15,6 @@ server.get("/", (req, res) => {
 // make the port dynamic
 const port = process.env.PORT || 5005;
 server.listen(port, () => console.log(`\n** Running on port${port} **\n`));
+
+// npm i -D nodemon
+// npx gitignore node
